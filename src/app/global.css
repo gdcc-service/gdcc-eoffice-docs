@@ -1,3 +1,11 @@
 @import 'tailwindcss';
 @import 'fumadocs-ui/css/neutral.css';
 @import 'fumadocs-ui/css/preset.css';
+
+/* เราต้องระบุ Media Query เพื่อไม่ให้กระทบหน้าจอมือถือ (ที่ Sidebar ควรซ่อนอยู่) */
+@media (min-width: 1024px) {
+  #nd-docs-layout {
+    /* กำหนดความกว้างใหม่ที่ต้องการตรงนี้ (ค่าปกติคือประมาณ 260px-280px) */
+    --fd-sidebar-width: 320px; 
+  }
+}
