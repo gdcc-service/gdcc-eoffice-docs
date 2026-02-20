@@ -1,0 +1,16 @@
+{
+  "title": "แนะนำเบื้องต้น",
+  "pages": [
+    "index",
+    "...",
+    "---เมนูระบบ---",
+    "intro",
+    "auth",
+    "portal",
+    "admin-tools",
+    "draft",
+    "saraban",
+    "in-tray"
+  ],
+  "root": true
+}

@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "home",
+    "personal",
+    "dashboard",
+    "org",
+    "email-personal-manage",
+    "email-manage",
+    "printcsv",
+    "dconnect",
+    "..."
+  ]
+}

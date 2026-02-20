@@ -1,0 +1,11 @@
+{
+  "title": "เมนู Admin Tools",
+  "icon": "admin-tools",
+  "pages": [
+    "index",
+    "...",
+    "---สิทธิ์ผู้ดูแลระบบ (Super Admin)---",
+    "...super-admin"
+  ],
+  "root": true
+}
