@@ -1,0 +1,8 @@
+{
+  "servers": {
+    "fumadocs Docs": {
+      "type": "sse",
+      "url": "https://gitmcp.io/fuma-nama/fumadocs"
+    }
+  }
+}
