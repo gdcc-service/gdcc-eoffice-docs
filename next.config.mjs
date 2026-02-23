@@ -1,4 +1,4 @@
-import { createMDX } from 'fumadocs-mdx/next';
+import { createMDX } from "fumadocs-mdx/next";
 
 const withMDX = createMDX();
 
@@ -8,10 +8,18 @@ const config = {
   async rewrites() {
     return [
       {
-        source: '/docs/:path*.mdx',
-        destination: '/llms.mdx/docs/:path*',
+        source: "/docs/:path*.mdx",
+        destination: "/llms.mdx/docs/:path*",
       },
     ];
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "*.r2.dev",
+      },
+    ],
   },
 };
 
