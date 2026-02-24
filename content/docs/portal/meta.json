@@ -1,5 +1,6 @@
 {
-  "title": "เมนูหน้าแรก (Portal)",
+  "title": "Portal",
+  "description": "เมนูหน้าแรก",
   "icon": "portal",
   "pages": [
     "index",

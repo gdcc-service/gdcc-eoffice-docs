@@ -1,5 +1,6 @@
 {
-  "title": "เมนู Admin Tools",
+  "title": "Admin Tools",
+  "description": "เครื่องมือสำหรับผู้ดูแลระบบ",
   "icon": "admin-tools",
   "pages": [
     "index",

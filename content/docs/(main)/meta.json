@@ -1,0 +1,7 @@
+{
+  "title": "Quick Start",
+  "description": "แนะนำการใช้งาน",
+  "icon": "quickstart",
+  "pages": ["...", "---การเข้าสู่ระบบ---", "...auth"],
+  "root": true
+}

@@ -1,5 +1,6 @@
 {
-  "title": "เมนูระบบ in-tray",
+  "title": "In-tray",
+  "description": "ระบบลงนามอิเล็กทรอนิกส์",
   "icon": "in-tray",
   "pages": [
     "index",

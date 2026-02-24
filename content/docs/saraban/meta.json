@@ -1,5 +1,6 @@
 {
-  "title": "เมนูระบบ Saraban",
+  "title": "e-Saraban",
+  "description": "ระบบสารบรรณอิเล็กทรอนิกส์",
   "icon": "saraban",
   "pages": [
     "index",

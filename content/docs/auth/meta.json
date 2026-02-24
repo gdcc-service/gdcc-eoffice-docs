@@ -1,6 +1,0 @@
-{
-  "title": "เมนูเข้าสู่ระบบ (Authentication)",
-  "icon": "auth",
-  "pages": ["index", "..."],
-  "root": true
-}

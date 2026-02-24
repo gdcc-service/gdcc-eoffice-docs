@@ -8,7 +8,9 @@ import {
   faScrewdriverWrench,
   faBook,
   faFileSignature,
+  faCircleQuestion,
 } from "@fortawesome/free-solid-svg-icons";
+import Image from "next/image";
 
 // See https://fumadocs.dev/docs/headless/source-api for more info
 export const source = loader({
@@ -17,6 +19,9 @@ export const source = loader({
   // plugins: [lucideIconsPlugin()],
   icon(icon) {
     switch (icon) {
+      case "quickstart": {
+        return <FontAwesomeIcon icon={faCircleQuestion} />;
+      }
       case "portal": {
         return <FontAwesomeIcon icon={faHouse} style={{ color: "#177fff" }} />;
       }
