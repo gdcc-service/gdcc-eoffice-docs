@@ -2,6 +2,13 @@
   "title": "Quick Start",
   "description": "แนะนำการใช้งาน",
   "icon": "quickstart",
-  "pages": ["...", "---การเข้าสู่ระบบ---", "...auth"],
+  "pages": [
+    "...",
+    "---การเข้าสู่ระบบ---",
+    "...auth",
+    "---อบรมการใช้งาน---",
+    "external:[กำหนดการอบรม (อปท.)](https://www.eoffice.go.th/training.html)",
+    "training-video"
+  ],
   "root": true
 }
