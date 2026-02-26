@@ -13,6 +13,9 @@ import { createRelativeLink } from "fumadocs-ui/mdx";
 import { LLMCopyButton, ViewOptions } from "@/components/ai/page-actions";
 import { gitConfig } from "@/lib/layout.shared";
 
+import { EditorRegister } from "./EditorRegister";
+import type { WithEditor } from "fumadocs-editor";
+
 export default async function Page(props: PageProps<"/docs/[[...slug]]">) {
   const params = await props.params;
   const page = source.getPage(params.slug);
@@ -22,32 +25,37 @@ export default async function Page(props: PageProps<"/docs/[[...slug]]">) {
   const lastModifiedTime = page.data.lastModified;
 
   return (
-    <DocsPage
-      toc={page.data.toc}
-      full={page.data.full}
-      tableOfContent={{ style: "clerk" }}
-    >
-      <DocsTitle>{page.data.title}</DocsTitle>
-      <DocsDescription className="mb-0">
-        {page.data.description}
-      </DocsDescription>
-      <div className="flex flex-row gap-2 items-center border-b pb-6">
-        <LLMCopyButton markdownUrl={`${page.url}.mdx`} />
-        <ViewOptions
-          markdownUrl={`${page.url}.mdx`}
-          githubUrl={`https://github.com/${gitConfig.user}/${gitConfig.repo}/blob/${gitConfig.branch}/content/docs/${page.path}`}
-        />
-      </div>
-      <DocsBody>
-        <MDX
-          components={getMDXComponents({
-            // this allows you to link to other pages with relative file paths
-            a: createRelativeLink(source, page),
-          })}
-        />
-      </DocsBody>
-      {lastModifiedTime && <PageLastUpdate date={lastModifiedTime} title="r" />}
-    </DocsPage>
+    <>
+      <EditorRegister
+        editMetadata={(page.data as WithEditor<typeof page.data>)._edit}
+      />
+      <DocsPage
+        toc={page.data.toc}
+        full={page.data.full}
+        tableOfContent={{ style: "clerk" }}
+      >
+        <DocsTitle>{page.data.title}</DocsTitle>
+        <DocsDescription className="mb-0">
+          {page.data.description}
+        </DocsDescription>
+        <div className="flex flex-row gap-2 items-center border-b pb-6">
+          <LLMCopyButton markdownUrl={`${page.url}.mdx`} />
+          <ViewOptions
+            markdownUrl={`${page.url}.mdx`}
+            githubUrl={`https://github.com/${gitConfig.user}/${gitConfig.repo}/blob/${gitConfig.branch}/content/docs/${page.path}`}
+          />
+        </div>
+        <DocsBody>
+          <MDX
+            components={getMDXComponents({
+              // this allows you to link to other pages with relative file paths
+              a: createRelativeLink(source, page),
+            })}
+          />
+        </DocsBody>
+        {lastModifiedTime && <PageLastUpdate date={lastModifiedTime} />}
+      </DocsPage>
+    </>
   );
 }
 

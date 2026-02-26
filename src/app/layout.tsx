@@ -1,5 +1,6 @@
 import React from "react";
 import { RootProvider } from "fumadocs-ui/provider/next";
+import { EditorProviderWrapper } from "@/components/providers/editor-provider";
 import "./global.css";
 import { Inter } from "next/font/google";
 
@@ -17,7 +18,9 @@ export default function Layout({ children }: LayoutProps<"/">) {
         <meta name="theme-color" content="#ffffff" />
       </head>
       <body className="flex flex-col min-h-screen">
-        <RootProvider>{children}</RootProvider>
+        <RootProvider>
+          <EditorProviderWrapper>{children}</EditorProviderWrapper>
+        </RootProvider>
       </body>
     </html>
   );
