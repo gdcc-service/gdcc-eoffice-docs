@@ -10,13 +10,16 @@ import {
   faFileSignature,
   faCircleQuestion,
 } from "@fortawesome/free-solid-svg-icons";
-import Image from "next/image";
+import { editorPlugin } from "fumadocs-editor/plugin";
 
 // See https://fumadocs.dev/docs/headless/source-api for more info
 export const source = loader({
   baseUrl: "/docs",
   source: docs.toFumadocsSource(),
-  // plugins: [lucideIconsPlugin()],
+  plugins: [
+    // lucideIconsPlugin(),
+    editorPlugin(),
+  ],
   icon(icon) {
     switch (icon) {
       case "quickstart": {
