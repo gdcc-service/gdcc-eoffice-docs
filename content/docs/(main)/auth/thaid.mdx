@@ -12,6 +12,8 @@ title: เข้าสู่ระบบด้วย ThaID
 
 ![](https://pub-32868b48992b43ebae1d6e46b84716f6.r2.dev/uploads/markdown/2026/02/24/aura-markdown-new-doc-image-system-20260224-155410-oi85k1.png)
 
+***
+
 ## FAQ
 
 ### ปัญหาเข้าสู่ระบบไม่ได้
@@ -34,8 +36,8 @@ title: เข้าสู่ระบบด้วย ThaID
     3. ตรวจสอบว่า URL ที่ใช้เข้าใช้งานถูกต้องหรือไม่
 
     ```
-
   </Accordion>
+
   <Accordion title="กรุณาปิดหน้านี้ หมดเวลาแสดง QRcode">
     ```markdown
     สาเหตุอาจเกิดจาก:
@@ -48,10 +50,10 @@ title: เข้าสู่ระบบด้วย ThaID
     1. กลับไปที่หน้า Login แล้วคลิกปุ่ม "เข้าสู่ระบบด้วย ThaID" ใหม่อีกครั้ง
 
     ```
-
   </Accordion>
+
   <Accordion title="curl failed: Could not resolve host: imauth.bora.dopa.go.th">
-      ```markdown
+    ```markdown
     สาเหตุอาจเกิดจาก:
     1. ไม่สามารถเชื่อมต่อไปยังเซิร์ฟเวอร์ ThaID ได้ในขณะนี้
 
@@ -64,12 +66,14 @@ title: เข้าสู่ระบบด้วย ThaID
     3. รอซักครู่แล้วลองใหม่อีกครั้ง
 
     ```
-
   </Accordion>
-  <Accordion title='{"status":"error","message":"Session expired."}'>
-      ```markdown
+
+  <Accordion title="{&#x22;status&#x22;:&#x22;error&#x22;,&#x22;message&#x22;:&#x22;Session expired.&#x22;}">
+    ```markdown
     สาเหตุอาจเกิดจาก:
     1. Browser ที่ใช้แสดง QR Code ThaID และ Browser ที่ใช้หลังจากสแกนสำเร็จ เป็นคนละตัวกัน ทำให้ Session ไม่ตรงกัน
+    2. คลิกเข้าใช้งานระบบผ่านลิงก์ทางแชท LINE (Line Browser)
+    3. มีการเปิดใช้งานโหมดไม่ระบุตัวตนใน Browser (Incognito Mode)
 
     ```
 
@@ -78,12 +82,13 @@ title: เข้าสู่ระบบด้วย ThaID
     1. เข้าสู่ระบบด้วย ชื่อบัญชีผู้ใช้งาน(Username/Password) แทนการใช้ ThaID
     2. ลองเปลี่ยนอุปกรณ์ที่ใช้เข้าสู่ระบบเป็นเครื่องอื่น
     3. เปลี่ยนไปใช้ Browser อื่น แล้วลองใหม่อีกครั้ง
+    4. ปิดใช้งานโหมดไม่ระบุตัวตน (Incognito Mode)
 
     ```
-
   </Accordion>
-    <Accordion title="Invalid code. No code provided. (Error code : 400)">
-      ```markdown
+
+  <Accordion title="Invalid code. No code provided. (Error code : 400)">
+    ```markdown
     สาเหตุอาจเกิดจาก:
     1. ผู้ใช้กดปุ่ม ไม่ยินยอม ในแอพ ThaID
 
@@ -95,9 +100,9 @@ title: เข้าสู่ระบบด้วย ThaID
     2. เข้าสู่ระบบด้วย ชื่อบัญชีผู้ใช้งาน(Username/Password) แทนการใช้ ThaID
 
     ```
-
   </Accordion>
-    <Accordion title="Error failure to get a peer from the ring-balancer.">
+
+  <Accordion title="Error failure to get a peer from the ring-balancer.">
     ```markdown
     สาเหตุอาจเกิดจาก:
     1. ไม่สามารถเชื่อมต่อไปยังเซิร์ฟเวอร์ ThaID ได้ในขณะนี้
@@ -110,7 +115,5 @@ title: เข้าสู่ระบบด้วย ThaID
     2. รอซักครู่แล้วลองใหม่อีกครั้ง
 
     ```
-
   </Accordion>
-
 </Accordions>
