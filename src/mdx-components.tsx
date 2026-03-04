@@ -14,7 +14,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     img: (props) => (
       <ImageZoom
         {...(props as any)}
-        className="max-h-96 mx-auto object-contain"
+        className="max-h-96 mx-auto object-contain border rounded-md"
       />
     ),
     Video: ({ src }) => (
