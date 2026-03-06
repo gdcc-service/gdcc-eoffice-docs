@@ -5,7 +5,7 @@
   "pages": [
     "...",
     "---การเข้าสู่ระบบ---",
-    "...auth",
+    "auth",
     "---อบรมการใช้งาน---",
     "external:[กำหนดการอบรม (อปท.)](https://www.eoffice.go.th/training.html)",
     "training-video"
