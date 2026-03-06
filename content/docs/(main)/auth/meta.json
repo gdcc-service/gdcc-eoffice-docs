@@ -1,3 +1,4 @@
 {
-  "pages": ["username", "thaid", "forgot_password", "..."]
+  "title": "แนะนำการเข้าสู่ระบบ",
+  "pages": ["username", "thaid", "forgot_password"]
 }
