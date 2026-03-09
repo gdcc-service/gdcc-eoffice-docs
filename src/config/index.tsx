@@ -1,4 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import type { FontAwesomeIconProps } from "@fortawesome/react-fontawesome";
 import { faFirstdraft } from "@fortawesome/free-brands-svg-icons";
 import {
   faHouse,
@@ -11,8 +12,9 @@ import {
   faUsers,
   faCloudArrowDown,
 } from "@fortawesome/free-solid-svg-icons";
+import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 
-export type menuName =
+export type MenuId =
   | "portal"
   | "admin-tools"
   | "draft"
@@ -24,7 +26,7 @@ export type menuName =
   | "emeeting"
   | "drive"; // Archive;
 
-export const menuColors: Record<menuName, string> = {
+export const menuColors: Record<MenuId, string> = {
   portal: "#177fff",
   "admin-tools": "#fecb3e",
   draft: "#fd7e14",
@@ -35,53 +37,67 @@ export const menuColors: Record<menuName, string> = {
   "car-reservation": "#0e75b5",
   emeeting: "#e43b79",
   drive: "#02c7fc",
+} as const;
+
+const iconDefinitions: Record<MenuId, IconDefinition> = {
+  portal: faHouse,
+  "admin-tools": faScrewdriverWrench,
+  draft: faFirstdraft,
+  saraban: faBook,
+  "in-tray": faFileSignature,
+  news: faNewspaper,
+  "room-booking": faChalkboardUser,
+  "car-reservation": faVanShuttle,
+  emeeting: faUsers,
+  drive: faCloudArrowDown,
+} as const;
+
+export const getMenuIcon = (
+  menuId: MenuId,
+  props?: Omit<FontAwesomeIconProps, "icon">,
+): React.JSX.Element => (
+  <FontAwesomeIcon
+    icon={iconDefinitions[menuId]}
+    style={{ color: menuColors[menuId], ...props?.style }}
+    {...props}
+  />
+);
+
+export const getMenuIdByName: Record<string, MenuId> = {
+  Portal: "portal",
+  "Admin Tools": "admin-tools",
+  Draft: "draft",
+  "e-Saraban": "saraban",
+  "In-tray": "in-tray",
+  eMeeting: "emeeting",
+  "Car Reservation": "car-reservation",
+  "Room Booking": "room-booking",
+  Archive: "drive",
+  News: "news",
 };
 
-export const menuIcons: Record<menuName, React.JSX.Element> = {
-  portal: (
-    <FontAwesomeIcon icon={faHouse} style={{ color: menuColors.portal }} />
-  ),
-  "admin-tools": (
-    <FontAwesomeIcon
-      icon={faScrewdriverWrench}
-      style={{ color: menuColors["admin-tools"] }}
-    />
-  ),
-  draft: (
-    <FontAwesomeIcon icon={faFirstdraft} style={{ color: menuColors.draft }} />
-  ),
-  saraban: (
-    <FontAwesomeIcon icon={faBook} style={{ color: menuColors.saraban }} />
-  ),
-  "in-tray": (
-    <FontAwesomeIcon
-      icon={faFileSignature}
-      style={{ color: menuColors["in-tray"] }}
-    />
-  ),
-  news: (
-    <FontAwesomeIcon icon={faNewspaper} style={{ color: menuColors.news }} />
-  ),
+// Utility functions
+export const getMenuIdFromName = (name: string): MenuId | undefined => {
+  return getMenuIdByName[name];
+};
 
-  "room-booking": (
-    <FontAwesomeIcon
-      icon={faChalkboardUser}
-      style={{ color: menuColors["room-booking"] }}
-    />
-  ),
-  "car-reservation": (
-    <FontAwesomeIcon
-      icon={faVanShuttle}
-      style={{ color: menuColors["car-reservation"] }}
-    />
-  ),
-  emeeting: (
-    <FontAwesomeIcon icon={faUsers} style={{ color: menuColors.emeeting }} />
-  ),
-  drive: (
-    <FontAwesomeIcon
-      icon={faCloudArrowDown}
-      style={{ color: menuColors.drive }}
-    />
-  ),
+export const getMenuColor = (menuId: MenuId): string => {
+  return menuColors[menuId];
+};
+
+export const getMenuIconDef = (menuId: MenuId): IconDefinition => {
+  return iconDefinitions[menuId];
+};
+
+// รองรับทั้ง MenuId และ name
+export const getEOfficeMenu = (idOrName: string) => {
+  const menuId = (getMenuIdByName[idOrName] ?? idOrName) as MenuId;
+
+  return {
+    id: menuId,
+    color: menuColors[menuId],
+    iconDef: iconDefinitions[menuId],
+    icon: (props?: Omit<FontAwesomeIconProps, "icon">) =>
+      getMenuIcon(menuId, props),
+  };
 };

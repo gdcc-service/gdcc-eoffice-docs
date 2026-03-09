@@ -2,12 +2,10 @@ import { docs } from "fumadocs-mdx:collections/server";
 import { type InferPageType, loader } from "fumadocs-core/source";
 import { lucideIconsPlugin } from "fumadocs-core/source/lucide-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCircleQuestion,
-} from "@fortawesome/free-solid-svg-icons";
+import { faCircleQuestion } from "@fortawesome/free-solid-svg-icons";
 import { editorPlugin } from "fumadocs-editor/plugin";
 
-import { menuIcons } from "@/config";
+import { getEOfficeMenu } from "@/config";
 
 // See https://fumadocs.dev/docs/headless/source-api for more info
 export const source = loader({
@@ -18,12 +16,18 @@ export const source = loader({
     editorPlugin(),
   ],
   icon(icon) {
+    if (!icon) return undefined;
     switch (icon) {
       case "quickstart": {
         return <FontAwesomeIcon icon={faCircleQuestion} />;
       }
     }
-    return menuIcons[icon as keyof typeof menuIcons] || undefined;
+
+    if (getEOfficeMenu(icon)) {
+      return getEOfficeMenu(icon)?.icon();
+    }
+
+    return undefined;
   },
 });
 
