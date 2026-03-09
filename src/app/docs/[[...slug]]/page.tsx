@@ -16,6 +16,8 @@ import { gitConfig } from "@/lib/layout.shared";
 import { EditorRegister } from "./EditorRegister";
 import type { WithEditor } from "fumadocs-editor";
 
+import { Breadcrumb } from "@/components/breadcrumb";
+
 export default async function Page(props: PageProps<"/docs/[[...slug]]">) {
   const params = await props.params;
   const page = source.getPage(params.slug);
@@ -33,6 +35,9 @@ export default async function Page(props: PageProps<"/docs/[[...slug]]">) {
         toc={page.data.toc}
         full={page.data.full}
         tableOfContent={{ style: "clerk" }}
+        breadcrumb={{
+          component: <Breadcrumb tree={source.getPageTree()} />,
+        }}
       >
         <DocsTitle>{page.data.title}</DocsTitle>
         <DocsDescription className="mb-0">

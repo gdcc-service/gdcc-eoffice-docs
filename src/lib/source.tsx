@@ -2,15 +2,12 @@ import { docs } from "fumadocs-mdx:collections/server";
 import { type InferPageType, loader } from "fumadocs-core/source";
 import { lucideIconsPlugin } from "fumadocs-core/source/lucide-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFirstdraft } from "@fortawesome/free-brands-svg-icons";
 import {
-  faHouse,
-  faScrewdriverWrench,
-  faBook,
-  faFileSignature,
   faCircleQuestion,
 } from "@fortawesome/free-solid-svg-icons";
 import { editorPlugin } from "fumadocs-editor/plugin";
+
+import { menuIcons } from "@/config";
 
 // See https://fumadocs.dev/docs/headless/source-api for more info
 export const source = loader({
@@ -25,38 +22,8 @@ export const source = loader({
       case "quickstart": {
         return <FontAwesomeIcon icon={faCircleQuestion} />;
       }
-      case "portal": {
-        return <FontAwesomeIcon icon={faHouse} style={{ color: "#177fff" }} />;
-      }
-      case "admin-tools": {
-        return (
-          <FontAwesomeIcon
-            icon={faScrewdriverWrench}
-            style={{ color: "#fecb3e" }}
-          />
-        );
-      }
-      case "draft": {
-        return (
-          <FontAwesomeIcon
-            icon={faFirstdraft}
-            style={{ color: "rgb(253, 126, 20)" }}
-          />
-        );
-      }
-      case "saraban": {
-        return <FontAwesomeIcon icon={faBook} style={{ color: "#ff8080" }} />;
-      }
-      case "in-tray": {
-        return (
-          <FontAwesomeIcon
-            icon={faFileSignature}
-            style={{ color: "#c68357" }}
-          />
-        );
-      }
     }
-    return undefined;
+    return menuIcons[icon as keyof typeof menuIcons] || undefined;
   },
 });
 
