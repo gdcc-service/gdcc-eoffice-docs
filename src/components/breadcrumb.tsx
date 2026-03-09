@@ -6,7 +6,12 @@ import { Fragment } from "react";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 
-import { getEOfficeMenu, getMenuIdFromName } from "@/config";
+import {
+  getEOfficeMenu,
+  getMenuIdFromName,
+  adminIcon,
+  userIcon,
+} from "@/config";
 
 export function Breadcrumb({ tree }: { tree: PageTree.Root }) {
   const pathname = usePathname();
@@ -44,6 +49,24 @@ export function Breadcrumb({ tree }: { tree: PageTree.Root }) {
       );
       items[0].url = "/docs/" + menuId; // เปลี่ยน URL เป็น /docs/{menuId}
     }
+  }
+
+  if (items[1]?.name === "สิทธิ์ผู้ดูแลระบบ (Admin)") {
+    items[1].name = (
+      <>
+        {adminIcon}
+        <span className="ml-1">{items[1].name}</span>
+      </>
+    );
+  }
+
+  if (items[1]?.name === "สิทธิ์ผู้ใช้งานทั่วไป (User)") {
+    items[1].name = (
+      <>
+        {userIcon}
+        <span className="ml-1">{items[1].name}</span>
+      </>
+    );
   }
 
   return (
