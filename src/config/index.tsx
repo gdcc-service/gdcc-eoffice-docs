@@ -11,6 +11,8 @@ import {
   faVanShuttle,
   faUsers,
   faCloudArrowDown,
+  faToggleOn,
+  faToggleOff,
 } from "@fortawesome/free-solid-svg-icons";
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 
@@ -101,3 +103,10 @@ export const getEOfficeMenu = (idOrName: string) => {
       getMenuIcon(menuId, props),
   };
 };
+
+export const adminIcon = (
+  <FontAwesomeIcon icon={faToggleOn} style={{ color: "#d3217e" }} />
+);
+export const userIcon = (
+  <FontAwesomeIcon icon={faToggleOff} style={{ color: "#2596be" }} />
+);
