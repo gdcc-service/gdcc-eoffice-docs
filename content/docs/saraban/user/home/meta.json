@@ -1,3 +1,4 @@
 {
-  "title": "หน้าหลัก"
+  "title": "หน้าหลัก",
+  "pages": ["fileaccess", "correspondence", "..."]
 }
