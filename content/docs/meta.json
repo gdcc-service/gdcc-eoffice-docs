@@ -10,6 +10,7 @@
     "room-booking",
     "car-reservation",
     "emeeting",
-    "drive"
+    "drive",
+    "timesheet"
   ]
 }
