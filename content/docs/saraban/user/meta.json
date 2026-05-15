@@ -1,12 +1,12 @@
 {
   "pages": [
     "home",
-    "pinned",
+    "bookmark",
     "print",
     "track",
+    "dconnect",
     "type-helper-manager",
     "fav-list",
-    "dconnect",
     "..."
   ]
 }
