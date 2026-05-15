@@ -1,4 +1,4 @@
 {
   "title": "แนะนำการเข้าสู่ระบบ",
-  "pages": ["username", "thaid", "forgot_password"]
+  "pages": ["username", "mobile", "thaid", "forgot_password"]
 }

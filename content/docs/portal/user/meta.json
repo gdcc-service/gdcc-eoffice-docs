@@ -1,3 +1,11 @@
 {
-  "pages": ["home", "notifications", "personal", "qrcode", "twofa", "..."]
+  "pages": [
+    "home",
+    "notifications",
+    "personal",
+    "qrcode",
+    "twofa",
+    "mobile-sync",
+    "..."
+  ]
 }
