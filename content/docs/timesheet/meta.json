@@ -1,0 +1,14 @@
+{
+  "title": "Timesheet",
+  "description": "ระบบลงเวลางาน",
+  "icon": "timesheet",
+  "pages": [
+    "index",
+    "...",
+    "---[toggle-off]สิทธิ์ผู้ใช้งานทั่วไป (User)---",
+    "...user",
+    "---[toggle-on]สิทธิ์ผู้ดูแลระบบ (Admin)---",
+    "...admin"
+  ],
+  "root": true
+}

@@ -13,6 +13,7 @@ import {
   faCloudArrowDown,
   faToggleOn,
   faToggleOff,
+  faFileLines
 } from "@fortawesome/free-solid-svg-icons";
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 
@@ -26,7 +27,8 @@ export type MenuId =
   | "room-booking"
   | "car-reservation"
   | "emeeting"
-  | "drive"; // Archive;
+  | "drive" // Archive;
+  | "timesheet";
 
 export const menuColors: Record<MenuId, string> = {
   portal: "#177fff",
@@ -39,6 +41,7 @@ export const menuColors: Record<MenuId, string> = {
   "car-reservation": "#0e75b5",
   emeeting: "#e43b79",
   drive: "#02c7fc",
+  timesheet: "#462eff",
 } as const;
 
 const iconDefinitions: Record<MenuId, IconDefinition> = {
@@ -52,6 +55,7 @@ const iconDefinitions: Record<MenuId, IconDefinition> = {
   "car-reservation": faVanShuttle,
   emeeting: faUsers,
   drive: faCloudArrowDown,
+  timesheet: faFileLines,
 } as const;
 
 export const getMenuIcon = (
@@ -76,6 +80,7 @@ export const getMenuIdByName: Record<string, MenuId> = {
   "Room Booking": "room-booking",
   Archive: "drive",
   News: "news",
+  Timesheet: "timesheet",
 };
 
 // Utility functions
