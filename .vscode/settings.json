@@ -3,5 +3,6 @@
     {
       "text": "เขียน commit message เป็นภาษาไทย"
     }
-  ]
+  ],
+  "js/ts.tsdk.path": "node_modules\\typescript\\lib"
 }
