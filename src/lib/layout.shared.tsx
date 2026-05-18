@@ -17,6 +17,7 @@ export function baseOptions(): BaseLayoutProps {
           e-Office Documentation
         </>
       ),
+      url: "/docs",
     },
 
     githubUrl: `https://github.com/${gitConfig.user}/${gitConfig.repo}`,
