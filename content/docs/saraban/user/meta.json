@@ -1,6 +1,7 @@
 {
   "pages": [
     "home",
+    "permission-manage",
     "bookmark",
     "print",
     "track",
