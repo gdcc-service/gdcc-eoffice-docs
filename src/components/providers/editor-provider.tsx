@@ -7,6 +7,7 @@ import "@mdxeditor/editor/style.css";
 import { Accordion, Accordions } from "fumadocs-ui/components/accordion";
 import { Step, Steps } from "fumadocs-ui/components/steps";
 import { Callout } from "fumadocs-ui/components/callout";
+import { Card, Cards } from "fumadocs-ui/components/card";
 
 export function EditorProviderWrapper({
   children,
@@ -50,8 +51,32 @@ export function EditorProviderWrapper({
             { name: "title", type: "string" },
           ],
         },
+        {
+          name: "Cards",
+          kind: "flow",
+          hasChildren: true,
+        },
+        {
+          name: "Card",
+          kind: "flow",
+          hasChildren: true,
+          props: [
+            {
+              name: "title",
+              type: "string",
+            },
+          ],
+        },
       ]}
-      mdxComponents={{ Callout, Step, Steps, Accordion, Accordions }}
+      mdxComponents={{
+        Callout,
+        Step,
+        Steps,
+        Accordion,
+        Accordions,
+        Card,
+        Cards,
+      }}
     >
       {children}
     </EditorProvider>
