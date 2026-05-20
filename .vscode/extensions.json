@@ -1,0 +1,15 @@
+{
+  "recommendations": [
+    "3raphat.thai-spell-checker",
+    "dbaeumer.vscode-eslint",
+    "christian-kohler.path-intellisense",
+    "dsznajder.es7-react-js-snippets",
+    "unifiedjs.vscode-mdx",
+    "esbenp.prettier-vscode",
+    "formulahendry.auto-rename-tag",
+    "editorconfig.editorconfig",
+    "bradlc.vscode-tailwindcss",
+    "gruntfuggly.todo-tree",
+    "yzhang.markdown-all-in-one"
+  ]
+}
