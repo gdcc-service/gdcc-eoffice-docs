@@ -37,7 +37,7 @@ export default async function Page(props: PageProps<"/docs/[[...slug]]">) {
         full={page.data.full}
         tableOfContent={{ style: "clerk" }}
         breadcrumb={{
-          component: <Breadcrumb tree={source.getPageTree()} />,
+          component: <Breadcrumb tree={source.getPageTree()} key={page.path} />,
         }}
       >
         <DocsTitle>{page.data.title}</DocsTitle>
