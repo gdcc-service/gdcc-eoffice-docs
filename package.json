@@ -2,12 +2,12 @@
   "name": "gdcc-eoffice-docs",
   "version": "0.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "next build",
     "dev": "next dev",
     "start": "next start",
-    "types:check": "fumadocs-mdx && next typegen && tsc --noEmit",
-    "postinstall": "fumadocs-mdx",
+    "types:check": "next typegen && tsc --noEmit",
     "lint": "eslint",
     "security:check": "pnpm audit --audit-level=high"
   },
@@ -19,24 +19,24 @@
     "@fortawesome/react-fontawesome": "^3.2.0",
     "@fumadocs/mdx-remote": "^1.5.1",
     "@mdxeditor/editor": "^4.1.0",
-    "fumadocs-core": "16.13.0",
+    "fumadocs-core": "16.14.4",
     "fumadocs-editor": "^0.3.1",
-    "fumadocs-mdx": "15.2.0",
-    "fumadocs-ui": "npm:@fumadocs/base-ui@16.13.0",
+    "fumadocs-mdx": "15.2.3",
+    "fumadocs-ui": "npm:@fumadocs/base-ui@16.14.4",
     "lucide-react": "^1.25.0",
-    "next": "16.2.11",
+    "next": "16.3.1",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
-    "tailwind-merge": "^3.5.0"
+    "cnfast": "^0.1.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.3",
-    "@types/mdx": "^2.0.13",
-    "@types/node": "^25.3.0",
-    "@types/react": "^19.2.17",
-    "@types/react-dom": "^19.2.3",
+    "@types/mdx": "^2.0.14",
+    "@types/node": "^26.2.0",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
     "eslint": "^10.0.0",
-    "eslint-config-next": "16.2.11",
+    "eslint-config-next": "16.3.1",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.3.3",
     "typescript": "^6.0.3"
@@ -44,5 +44,5 @@
   "engines": {
     "node": ">=24.13.0 <25"
   },
-  "packageManager": "pnpm@11.18.0+sha512.33d83c77da82f49fba836925c6f1b841181ec3132b670639bd012f7075f5c7cf634c5f870147c19aae7478fac01df09d8892e880454896edd23ee9b33757563c"
+  "packageManager": "pnpm@11.22.0+sha512.1ff870c4c6133dfd88fb2afc46dd13d47f09c9794b438c6fdb47ca98caf3bc16381ee0be93a091b8e3824cf01f889f46d7d9e20910fb0be1ab0fb5baa80dd621"
 }
