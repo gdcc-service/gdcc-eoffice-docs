@@ -9,7 +9,9 @@
     "start": "next start",
     "types:check": "next typegen && tsc --noEmit",
     "lint": "eslint",
-    "security:check": "pnpm audit --audit-level=high"
+    "security:check": "pnpm audit --audit-level=high",
+    "media:prune": "node scripts/prune-unused-images.mjs --dry-run",
+    "media:prune:delete": "node scripts/prune-unused-images.mjs --delete"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
