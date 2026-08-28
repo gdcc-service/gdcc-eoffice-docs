@@ -1,45 +1,59 @@
 # gdcc-eoffice-docs
 
-This is a Next.js application generated with
-[Create Fumadocs](https://github.com/fuma-nama/fumadocs).
+เอกสารคู่มือ e-Office สร้างด้วย [Fumadocs](https://fumadocs.dev) + Next.js  
+ใช้ **pnpm** เป็น package manager
 
-Run development server:
+## เริ่มต้น
 
 ```bash
-npm run dev
-# or
+pnpm install
 pnpm dev
-# or
-yarn dev
 ```
 
-Open http://localhost:3000 with your browser to see the result.
+เปิด http://localhost:3000
+
+| คำสั่ง | คำอธิบาย |
+| --- | --- |
+| `pnpm dev` | รัน development server |
+| `pnpm build` | build สำหรับ production |
+| `pnpm start` | รัน production server |
+| `pnpm lint` | ตรวจ ESLint |
+| `pnpm types:check` | ตรวจ TypeScript |
+| `pnpm security:check` | ตรวจ dependency vulnerabilities |
+
+## รูปในคู่มือ (Media)
+
+รูปของเอกสารเก็บใน `public/media/` ชื่อไฟล์เป็น UUID เช่น:
+
+```mdx
+![](/media/10b55fb1-1dd6-4771-87f4-069879e0aeef.png)
+```
+
+### ลบรูปที่ไม่ได้ใช้งาน
+
+สคริปต์จะเทียบไฟล์ใน `public/media/` กับ path ที่ถูกอ้างใน `content/**/*.mdx`  
+รูปที่ไม่มีในเอกสารจะถือว่าไม่ได้ใช้งาน
+
+```bash
+# ลิสต์รูปที่ไม่ได้ใช้ (ไม่ลบ)
+pnpm media:prune
+
+# ลบรูปที่ไม่ได้ใช้ออกจริง
+pnpm media:prune:delete
+```
+
+แนะนำรัน `--dry-run` (`pnpm media:prune`) ก่อนทุกครั้ง แล้วค่อยใช้ `pnpm media:prune:delete`
 
 ## Explore
 
-In the project, you can see:
+- `lib/source.ts`: content source adapter (`loader()`)
+- `lib/layout.shared.tsx`: shared layout options
+- `source.config.ts`: Fumadocs MDX config
 
-- `lib/source.ts`: Code for content source adapter, [`loader()`](https://fumadocs.dev/docs/headless/source-api) provides the interface to access your content.
-- `lib/layout.shared.tsx`: Shared options for layouts, optional but preferred to keep.
+| Route | Description |
+| --- | --- |
+| `app/(home)` | landing และหน้าทั่วไป |
+| `app/docs` | documentation layout / pages |
+| `app/api/search/route.ts` | search API |
 
-| Route                     | Description                                            |
-| ------------------------- | ------------------------------------------------------ |
-| `app/(home)`              | The route group for your landing page and other pages. |
-| `app/docs`                | The documentation layout and pages.                    |
-| `app/api/search/route.ts` | The Route Handler for search.                          |
-
-### Fumadocs MDX
-
-A `source.config.ts` config file has been included, you can customise different options like frontmatter schema.
-
-Read the [Introduction](https://fumadocs.dev/docs/mdx) for further details.
-
-## Learn More
-
-To learn more about Next.js and Fumadocs, take a look at the following
-resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js
-  features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-- [Fumadocs](https://fumadocs.dev) - learn about Fumadocs
+อ่านเพิ่ม: [Fumadocs MDX](https://fumadocs.dev/docs/mdx) · [Next.js Docs](https://nextjs.org/docs)
