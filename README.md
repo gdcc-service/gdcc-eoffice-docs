@@ -29,6 +29,22 @@ pnpm dev
 ![](/media/10b55fb1-1dd6-4771-87f4-069879e0aeef.png)
 ```
 
+### ดึงรูปจาก URL ภายนอกเข้า repo
+
+สคริปต์จะสแกน `content/**/*.mdx` หา URL รูปจาก R2 แล้วดาวน์โหลดไปที่ `public/media/` พร้อมแก้ path ในเอกสารเป็น `/media/...`
+
+```bash
+pnpm media:localize
+```
+
+### เปลี่ยนชื่อรูปเป็น UUID แบบ flat
+
+หลัง localize รูปจะอยู่ใน path แบบ nested (`/media/uploads/...`) ใช้สคริปต์นี้ย้ายไป `public/media/{uuid}.png` และอัปเดต path ใน MDX
+
+```bash
+pnpm media:uuid-rename
+```
+
 ### ลบรูปที่ไม่ได้ใช้งาน
 
 สคริปต์จะเทียบไฟล์ใน `public/media/` กับ path ที่ถูกอ้างใน `content/**/*.mdx`  

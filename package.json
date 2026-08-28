@@ -10,6 +10,8 @@
     "types:check": "next typegen && tsc --noEmit",
     "lint": "eslint",
     "security:check": "pnpm audit --audit-level=high",
+    "media:localize": "node scripts/localize-images.mjs",
+    "media:uuid-rename": "node scripts/uuid-rename-images.mjs",
     "media:prune": "node scripts/prune-unused-images.mjs --dry-run",
     "media:prune:delete": "node scripts/prune-unused-images.mjs --delete"
   },
