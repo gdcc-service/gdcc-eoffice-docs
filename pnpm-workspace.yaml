@@ -3,6 +3,8 @@ allowBuilds:
   esbuild: true
   sharp: true
   unrs-resolver: true
+minimumReleaseAgeExclude:
+  - lucide-react@1.47.0
 onlyBuiltDependencies:
   - es5-ext
   - esbuild

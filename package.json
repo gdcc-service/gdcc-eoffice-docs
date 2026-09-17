@@ -21,32 +21,33 @@
     "@fortawesome/free-regular-svg-icons": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^3.2.0",
-    "@fumadocs/mdx-remote": "^1.5.1",
-    "@mdxeditor/editor": "^4.1.0",
-    "fumadocs-core": "16.14.4",
+    "@fumadocs/mdx-remote": "^1.5.2",
+    "@mdxeditor/editor": "^4.2.5",
+    "fumadocs-core": "16.15.11",
     "fumadocs-editor": "^0.3.1",
-    "fumadocs-mdx": "15.2.3",
-    "fumadocs-ui": "npm:@fumadocs/base-ui@16.14.4",
-    "lucide-react": "^1.25.0",
-    "next": "16.3.1",
-    "react": "^19.2.8",
-    "react-dom": "^19.2.8",
-    "cnfast": "^0.1.0"
+    "fumadocs-mdx": "15.4.1",
+    "fumadocs-ui": "npm:@fumadocs/base-ui@16.15.11",
+    "lucide-react": "^1.47.0",
+    "next": "16.3.5",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "cnfast": "^0.2.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.3",
     "@types/mdx": "^2.0.14",
-    "@types/node": "^26.2.0",
-    "@types/react": "^19.2.18",
-    "@types/react-dom": "^19.2.4",
-    "eslint": "^10.0.0",
-    "eslint-config-next": "16.3.1",
-    "postcss": "^8.5.6",
+    "@types/node": "^26.6.1",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "eslint": "^10.10.0",
+    "eslint-config-next": "16.3.5",
+    "postcss": "^8.5.28",
     "tailwindcss": "^4.3.3",
     "typescript": "^6.0.3"
   },
   "engines": {
-    "node": ">=24.13.0 <25"
+    "node": ">=24.20.0 <25",
+    "pnpm": ">=12.4.0"
   },
-  "packageManager": "pnpm@11.22.0+sha512.1ff870c4c6133dfd88fb2afc46dd13d47f09c9794b438c6fdb47ca98caf3bc16381ee0be93a091b8e3824cf01f889f46d7d9e20910fb0be1ab0fb5baa80dd621"
+  "packageManager": "pnpm@12.4.2+sha512.08adc6613180275c7c9edada39dcf08c9c61ad4e7eaf330a4f3461f102b0f907423454d117f98e72d47fef0616070644d7bffc973a6a57f5090a6d7c368b07c9"
 }
