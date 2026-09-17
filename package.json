@@ -9,6 +9,7 @@
     "start": "next start",
     "types:check": "next typegen && tsc --noEmit",
     "lint": "eslint",
+    "lint:links": "node ./scripts/lint-links.mjs",
     "security:check": "pnpm audit --audit-level=high",
     "media:localize": "node scripts/localize-images.mjs",
     "media:uuid-rename": "node scripts/uuid-rename-images.mjs",
@@ -23,6 +24,7 @@
     "@fortawesome/react-fontawesome": "^3.2.0",
     "@fumadocs/mdx-remote": "^1.5.2",
     "@mdxeditor/editor": "^4.2.5",
+    "cnfast": "^0.2.0",
     "fumadocs-core": "16.15.11",
     "fumadocs-editor": "^0.3.1",
     "fumadocs-mdx": "15.4.1",
@@ -30,8 +32,7 @@
     "lucide-react": "^1.47.0",
     "next": "16.3.5",
     "react": "^19.3.0",
-    "react-dom": "^19.3.0",
-    "cnfast": "^0.2.0"
+    "react-dom": "^19.3.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.3",
@@ -41,6 +42,7 @@
     "@types/react-dom": "^19.3.0",
     "eslint": "^10.10.0",
     "eslint-config-next": "16.3.5",
+    "next-validate-link": "^1.6.7",
     "postcss": "^8.5.28",
     "tailwindcss": "^4.3.3",
     "typescript": "^6.0.3"
