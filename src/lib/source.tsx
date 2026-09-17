@@ -1,17 +1,9 @@
 import { defineDocs } from "fumadocs-mdx/macro";
-import { type InferPageType, loader } from "fumadocs-core/source";
-import { lucideIconsPlugin } from "fumadocs-core/source/lucide-icons";
+import { loader } from "fumadocs-core/source";
 import { metaSchema, pageSchema } from "fumadocs-core/source/schema";
-import { docsContentRoute, docsImageRoute, docsRoute } from "./shared";
+import { docsContentRoute, docsImageRoute } from "./shared";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCircleQuestion,
-  faToggleOn,
-  faToggleOff,
-} from "@fortawesome/free-solid-svg-icons";
-// import { defineConfig } from "fumadocs-mdx/config";
-import { editorPlugin } from "fumadocs-editor/plugin";
-// import lastModified from "fumadocs-mdx/plugins/last-modified";
+import { faCircleQuestion } from "@fortawesome/free-solid-svg-icons";
 import { getEOfficeMenu, adminIcon, userIcon } from "@/config";
 
 const docs = defineDocs({
@@ -27,21 +19,10 @@ const docs = defineDocs({
   },
 });
 
-// export default defineConfig({
-//   mdxOptions: {
-//     // MDX options
-//   },
-//   plugins: [lastModified()],
-// });
-
 // See https://fumadocs.dev/docs/headless/source-api for more info
 export const source = loader({
   baseUrl: "/docs",
   source: docs.toFumadocsSource(),
-  plugins: [
-    // lucideIconsPlugin(),
-    editorPlugin(),
-  ],
   icon(icon) {
     if (!icon) return undefined;
     switch (icon) {
