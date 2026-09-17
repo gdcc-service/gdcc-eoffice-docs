@@ -1,4 +1,3 @@
-import React from "react";
 import { RootProvider } from "fumadocs-ui/provider/next";
 import { EditorProviderWrapper } from "@/components/providers/editor-provider";
 import "./global.css";
