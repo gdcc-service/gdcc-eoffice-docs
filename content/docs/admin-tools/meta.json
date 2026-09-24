@@ -4,9 +4,17 @@
   "icon": "admin-tools",
   "pages": [
     "index",
-    "...",
-    "---สิทธิ์ผู้ดูแลระบบ (Super Admin)---",
-    "...super-admin"
+    "dashboard",
+    "registration",
+    "---แอดมินหลัก---",
+    "primary-admin/user",
+    "primary-admin/listsys",
+    "primary-admin/masterdata",
+    "primary-admin/billing",
+    "---เพิ่มเติม---",
+    "primary-admin/report",
+    "---แอดมินรอง---",
+    "sub-admin"
   ],
   "root": true
 }

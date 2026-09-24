@@ -5,6 +5,15 @@ const withMDX = createMDX();
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  async redirects() {
+    return [
+      {
+        source: "/docs/admin-tools/super-admin/:path*",
+        destination: "/docs/admin-tools/primary-admin/:path*",
+        permanent: true,
+      },
+    ];
+  },
   images: {
     remotePatterns: [
       {
