@@ -5,15 +5,13 @@
   "pages": [
     "index",
     "dashboard",
-    "registration",
-    "---แอดมินหลัก---",
     "primary-admin/user",
     "primary-admin/listsys",
     "primary-admin/masterdata",
+    "registration",
     "primary-admin/billing",
     "---เพิ่มเติม---",
     "primary-admin/report",
-    "---แอดมินรอง---",
     "sub-admin"
   ],
   "root": true
