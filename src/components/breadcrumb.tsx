@@ -15,59 +15,71 @@ import {
 
 export function Breadcrumb({ tree }: { tree: PageTree.Root }) {
   const pathname = usePathname();
-  const items = useBreadcrumb(pathname, tree, {
+  const breadcrumb = useBreadcrumb(pathname, tree, {
     includeRoot: true,
     includeSeparator: true,
     includePage: true,
   });
 
-  if (items.length === 0) {
+  if (breadcrumb.length === 0) {
     return null;
   }
 
-  if (items[0]?.name === "Docs") {
-    // ถ้า root เป็น "Docs" ให้เอาออก
-    items.shift();
-  }
+  // ถ้า root เป็น "Docs" ให้เอาออก
+  const source =
+    breadcrumb[0]?.name === "Docs" ? breadcrumb.slice(1) : breadcrumb;
 
-  // แสดง icon ถ้า items[0].name มีใน eOffice menu
-  if (items.length > 0 && items[0]?.name && typeof items[0].name === "string") {
-    const menuId = getMenuIdFromName(items[0].name);
-    if (menuId) {
-      const menu = getEOfficeMenu(menuId);
-      const originalName = items[0].name;
-      items[0].name = (
-        <span
-          className="inline-flex items-center rounded-md px-2 py-1 text-xs font-medium inset-ring inset-ring-gray-400/20"
-          style={{
-            backgroundColor: menu.color + "1A", // 10% opacity
-          }}
-        >
-          {menu.icon({ className: "inline mr-1 size-4" })}
-          {originalName}
-        </span>
-      );
-      items[0].url = "/docs/" + menuId; // เปลี่ยน URL เป็น /docs/{menuId}
+  const items = source.map((item, index) => {
+    // แสดง icon ถ้า items[0].name มีใน eOffice menu
+    if (index === 0 && item.name && typeof item.name === "string") {
+      const menuId = getMenuIdFromName(item.name);
+      if (menuId) {
+        const menu = getEOfficeMenu(menuId);
+        const originalName = item.name;
+        return {
+          ...item,
+          name: (
+            <span
+              className="inline-flex items-center rounded-md px-2 py-1 text-xs font-medium inset-ring inset-ring-gray-400/20"
+              style={{
+                backgroundColor: menu.color + "1A", // 10% opacity
+              }}
+            >
+              {menu.icon({ className: "inline mr-1 size-4" })}
+              {originalName}
+            </span>
+          ),
+          url: "/docs/" + menuId, // เปลี่ยน URL เป็น /docs/{menuId}
+        };
+      }
     }
-  }
 
-  if (items[1]?.name === "สิทธิ์ผู้ดูแลระบบ (Admin)") {
-    items[1].name = (
-      <>
-        {adminIcon}
-        <span className="ml-1">{items[1].name}</span>
-      </>
-    );
-  }
+    if (index === 1 && item.name === "สิทธิ์ผู้ดูแลระบบ (Admin)") {
+      return {
+        ...item,
+        name: (
+          <>
+            {adminIcon}
+            <span className="ml-1">{item.name}</span>
+          </>
+        ),
+      };
+    }
 
-  if (items[1]?.name === "สิทธิ์ผู้ใช้งานทั่วไป (User)") {
-    items[1].name = (
-      <>
-        {userIcon}
-        <span className="ml-1">{items[1].name}</span>
-      </>
-    );
-  }
+    if (index === 1 && item.name === "สิทธิ์ผู้ใช้งานทั่วไป (User)") {
+      return {
+        ...item,
+        name: (
+          <>
+            {userIcon}
+            <span className="ml-1">{item.name}</span>
+          </>
+        ),
+      };
+    }
+
+    return item;
+  });
 
   return (
     <div className="-mb-3 flex flex-row items-center gap-1 text-sm font-medium text-fd-muted-foreground">
