@@ -12,6 +12,10 @@ const { rewrite: rewriteSuffix } = rewritePath(
 );
 
 export default function proxy(request: NextRequest) {
+  if (request.nextUrl.pathname === '/') {
+    return NextResponse.redirect(new URL(docsRoute, request.nextUrl));
+  }
+
   const result = rewriteSuffix(request.nextUrl.pathname);
   if (result) {
     return NextResponse.rewrite(new URL(result, request.nextUrl));
@@ -30,3 +34,9 @@ export default function proxy(request: NextRequest) {
 
   return NextResponse.next();
 }
+
+// Run only on the home page and docs pages, not on static files or images.
+// Keep the docs path in sync with `docsRoute` in src/lib/shared.ts.
+export const config = {
+  matcher: ['/', '/docs/:path*'],
+};
